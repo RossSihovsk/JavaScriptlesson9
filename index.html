@@ -8,14 +8,18 @@
 <form>
     <label>Surname</label><br> <input type="text" id="getLastName"><br>
     <label>Name</label><br> <input type="text" id="getFirstName"><br>
-    <label>Age</label><br> <input type="text" id="getAge"><label class='invisible' id='ageLabel'>Age: from 0 to 100</label><br>
+    <label>Age</label><br> <input type="text" id="getAge"><br>
     <label>Living place</label><br> <input type="text" id="getAddress"><br>
-    <br> <input type="button" value="Send by Get"
-                onclick="sendDataByGetMethod()">
-    <input type="button" value="Send by Post"
-           onclick="sendDataByPostMethod()">
-
+    <br> <input id="AjaxGET" type="button" value="Send by Get"
+                onclick="sendDataByGetMethod()" disabled>
+    <input id="AjaxPOST" type="button" value="Send by Post"
+           onclick="sendDataByPostMethod()" disabled>
+    <p id="Message" style="visibility: hidden" >Вік повинен бути від 0 до 100!</p>
 </form>
+
+<style>
+    .error { border-color: red }
+</style>
 
 <script src="Application.js"></script>
 </body>

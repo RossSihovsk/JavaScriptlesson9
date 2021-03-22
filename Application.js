@@ -1,18 +1,17 @@
 getAge.onblur = function() {
     if ((this.value < 0) || (this.value > 100) || (isNaN(this.value))) {
-        getAge.classList.add('errors');
-        getAge.focus();
-        window.alert("Incorect Data")
-        //getAge.value = 'Incorrect data';
-        ageLabel.classList.remove('invisible');
-        ageLabel.classList.add('visible');
+        document.getElementById("Message").style = "visible";
+        document.getElementById("AjaxGET").disabled = true;
+        document.getElementById("AjaxPOST").disabled = true;
+        getAge.classList.add('error');
     } else {
-        getAge.classList.remove('errors');
-        getAddress.focus();
-        ageLabel.classList.remove('visible');
-        ageLabel.classList.add('invisible');
+        document.getElementById("Message").style.visibility = "hidden";
+        document.getElementById("AjaxGET").disabled = false;
+        document.getElementById("AjaxPOST").disabled = false;
+        getAge.classList.remove('error');
     }
 }
+
 
 function sendDataByGetMethod() {
     let userData = {
