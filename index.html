@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript_9</title>
+    <title>JavaScript AJAX</title>
+    <script src="Application.js"></script>
 </head>
+
 <body>
+<h1>AJAX methods</h1>
 <form>
-    <label>Surname</label><br> <input type="text" id="getLastName"><br>
-    <label>Name</label><br> <input type="text" id="getFirstName"><br>
-    <label>Age</label><br> <input type="text" id="getAge"><br>
-    <label>Living place</label><br> <input type="text" id="getAddress"><br>
-    <br> <input id="AjaxGET" type="button" value="Send by Get"
-                onclick="sendDataByGetMethod()" disabled>
-    <input id="AjaxPOST" type="button" value="Send by Post"
-           onclick="sendDataByPostMethod()" disabled>
-    <p id="Message" style="visibility: hidden" >Вік повинен бути від 0 до 100!</p>
+    <input id="Surname" type="text" placeholder="Фамилия" onkeyup="check()"><br><br>
+    <input id="Name" type="text" placeholder="Имя" onkeyup="check()"><br><br>
+    <input id="Age" type="text" placeholder="Возраст" onkeyup="check()" onblur="validateAge()"><br><br>
+    <input id="Address" type="text" placeholder="Место проживания" onkeyup="check()"><br>
+    <p id="Message">Для отправки формы необходимо корректно заполнить все поля!</p>
+    <input id="AjaxGET" type="button" value="Ajax GET" onclick="sendDataByGetMethod()" disabled>
+    <input id="AjaxPOST" type="button" value="Ajax POST" onclick="sendDataByPostMethod()" disabled>
+    <input type="button" value="Clear Fields" onclick="clearFields()">
 </form>
 
 <style>
     .error { border-color: red }
 </style>
-
-<script src="Application.js"></script>
 </body>
 </html>
