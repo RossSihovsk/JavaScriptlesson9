@@ -24,7 +24,7 @@ function validateAge() {
         age.classList.add("error");
         age.value = "";
         age.focus();
-        console.log("Возраст должен быть числом от 1 до 100 лет!");
+        console.log("Некоректний вік!");
     }
 }
 
@@ -58,10 +58,3 @@ function sendDataByPostMethod() {
     xhr.send(JSON.stringify(userData));
 }
 
-function clearFields() {
-    document.getElementById("Surname").value = "";
-    document.getElementById("Name").value = "";
-    document.getElementById("Age").value = "";
-    document.getElementById("Address").value = "";
-    check();
-}
